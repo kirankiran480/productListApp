@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row hearder">
+    <div class="column">Subcategory</div>
+    <div class="column">Title</div>
+    <div class="column">Price</div>
+    <div class="column">Popularity</div>
+  </div>
+  <div class="row" *ngFor="let product of products | paginate: config">
+    <div class="column">{{product.subcategory}}</div>
+    <div class="column">{{product.title}}</div>
+    <div class="column">{{product.price}}</div>
+    <div class="column">{{product.popularity}}</div>
+  </div>
+</div>
+<pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
